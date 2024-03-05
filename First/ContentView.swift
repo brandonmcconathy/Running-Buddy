@@ -25,6 +25,7 @@ struct ContentView: View {
                     HomeView()
                 }
             }
+            .statusBar(hidden: true)
             .toolbar {
                 ToolbarItem() {
                     Button {
