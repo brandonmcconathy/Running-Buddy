@@ -7,19 +7,35 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    
+    @State private var settings: Bool = false
+    @State private var darkMode: Bool = true
+    
     var body: some View {
-        ZStack() {
-            Color(.lightGray)
-                .ignoresSafeArea()
-            VStack() {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
+        
+        NavigationView {
+            ZStack {
+                Color(darkMode ? .lightGray : .white)
+                    .ignoresSafeArea()
+                if settings {
+                    SettingsView(darkMode: $darkMode)
+                } else {
+                    HomeView()
+                }
+            }
+            .toolbar {
+                ToolbarItem() {
+                    Button {
+                        settings.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
             }
         }
-        
+         
     }
 }
 
