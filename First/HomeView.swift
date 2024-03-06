@@ -11,6 +11,7 @@ struct HomeView: View {
     
     @State private var distance = 75.0
     @State private var daysPerWeek = 6.0
+    @State private var longRunPercent = 0.25
     
     var body: some View {
         VStack {
@@ -50,11 +51,20 @@ struct HomeView: View {
             ) {
                 Text("Days per week:  \(Int(daysPerWeek))")
             }
-            .padding(EdgeInsets(top: 10, leading: 50, bottom: 40, trailing: 50))
-            .font(.system(size: 20))
-            Text(String(format: "Miles per day: %.2f", distance * 0.75 / (daysPerWeek - 1)))
+                .padding(EdgeInsets(top: 10, leading: 50, bottom: 10, trailing: 50))
                 .font(.system(size: 20))
-            Text(String(format: "Long Run: %.2f", distance * 0.25))
+            Stepper(
+                value: $longRunPercent,
+                in: 0.2...0.30,
+                step: 0.05
+            ) {
+                Text("Long Run:  \(Int(longRunPercent * 100))%")
+            }
+                .padding(EdgeInsets(top: 10, leading: 50, bottom: 40, trailing: 50))
+                .font(.system(size: 20))
+            Text(String(format: "Miles per day: %.2f", distance * (1 - longRunPercent) / (daysPerWeek - 1)))
+                .font(.system(size: 20))
+            Text(String(format: "Long Run: %.2f", distance * longRunPercent))
                 .padding(.vertical, 20)
                 .font(.system(size: 20))
             Text("Next week mileage: \(Int(round(distance * 1.1)))")
