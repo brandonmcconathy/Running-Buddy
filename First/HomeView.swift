@@ -9,13 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var distance = 50.0
-    @State private var daysPerWeek = 5.0
+    @State private var distance = 75.0
+    @State private var daysPerWeek = 6.0
     
     var body: some View {
         VStack {
             Text("Running Schedule")
                 .font(.system(size: 28))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
             HStack {
                 Button {
                     distance -= 1
@@ -26,7 +27,7 @@ struct HomeView: View {
                     .disabled(distance == 0 ? true : false)
                 Slider(
                     value: $distance,
-                    in: 0...100,
+                    in: 0...150,
                     step: 1
                 )
                     .padding(.horizontal, 5)
@@ -49,10 +50,13 @@ struct HomeView: View {
             ) {
                 Text("Days per week:  \(Int(daysPerWeek))")
             }
-            .padding(EdgeInsets(top: 10, leading: 50, bottom: 20, trailing: 50))
+            .padding(EdgeInsets(top: 10, leading: 50, bottom: 40, trailing: 50))
             .font(.system(size: 20))
-            Text("Miles per day: \(distance * 0.75 / (daysPerWeek - 1))")
-            Text("Long Run: \(distance * 0.25)")
+            Text(String(format: "Miles per day: %.2f", distance * 0.75 / (daysPerWeek - 1)))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
+                .font(.system(size: 20))
+            Text(String(format: "Long Run: %.2f", distance * 0.25))
+                .font(.system(size: 20))
             Spacer()
         }
     }
