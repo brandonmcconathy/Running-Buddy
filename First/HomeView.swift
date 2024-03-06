@@ -53,9 +53,11 @@ struct HomeView: View {
             .padding(EdgeInsets(top: 10, leading: 50, bottom: 40, trailing: 50))
             .font(.system(size: 20))
             Text(String(format: "Miles per day: %.2f", distance * 0.75 / (daysPerWeek - 1)))
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
                 .font(.system(size: 20))
             Text(String(format: "Long Run: %.2f", distance * 0.25))
+                .padding(.vertical, 20)
+                .font(.system(size: 20))
+            Text("Next week mileage: \(Int(round(distance * 1.1)))")
                 .font(.system(size: 20))
             Spacer()
         }
