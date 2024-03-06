@@ -37,7 +37,7 @@ struct HomeView: View {
                     Image(systemName: "plus")
                 }
                     .font(.system(size: 25))
-                    .disabled(distance == 100 ? true : false)
+                    .disabled(distance == 150 ? true : false)
             }
                 .padding(.horizontal, 60)
             Text("Miles per week:  \(Int(distance))")
