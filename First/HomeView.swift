@@ -9,11 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @Binding var darkMode: Bool
+    
     @State private var distance = 75.0
     @State private var daysPerWeek = 6.0
     @State private var longRunPercent = 0.25
     
     var body: some View {
+        
         VStack {
             Text("Running Schedule")
                 .font(.system(size: 28))
@@ -69,6 +72,11 @@ struct HomeView: View {
                 .font(.system(size: 20))
             Text("Next week mileage: \(Int(round(distance * 1.1)))")
                 .font(.system(size: 20))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
+            NavigationLink(destination: CalculatorView(darkMode: $darkMode)) {
+                Text("Pace Calculator")
+            }
+                .font(.system(size: 23))
             Spacer()
         }
     }

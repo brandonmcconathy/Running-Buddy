@@ -22,7 +22,7 @@ struct ContentView: View {
                 if settings {
                     SettingsView(darkMode: $darkMode)
                 } else {
-                    HomeView()
+                    HomeView(darkMode: $darkMode)
                 }
             }
             .statusBar(hidden: true)

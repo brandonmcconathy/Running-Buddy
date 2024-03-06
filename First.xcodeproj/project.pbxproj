@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA3F72542B9910D40005F4B6 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F72532B9910D40005F4B6 /* CalculatorView.swift */; };
 		CA9E41462B928A250057E5C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E41452B928A250057E5C2 /* HomeView.swift */; };
 		CADF19CA2B9165360050C2DB /* FirstApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF19C92B9165360050C2DB /* FirstApp.swift */; };
 		CADF19CC2B9165360050C2DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF19CB2B9165360050C2DB /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA3F72532B9910D40005F4B6 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		CA9E41452B928A250057E5C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CA9E41472B96D2C00057E5C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CADF19C62B9165360050C2DB /* First.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +62,7 @@
 				CADF19C92B9165360050C2DB /* FirstApp.swift */,
 				CADF19CB2B9165360050C2DB /* ContentView.swift */,
 				CA9E41452B928A250057E5C2 /* HomeView.swift */,
+				CA3F72532B9910D40005F4B6 /* CalculatorView.swift */,
 				CADF19D72B9190FB0050C2DB /* SettingsView.swift */,
 				CADF19CD2B9165380050C2DB /* Assets.xcassets */,
 				CADF19CF2B9165380050C2DB /* Preview Content */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CADF19D82B9190FB0050C2DB /* SettingsView.swift in Sources */,
+				CA3F72542B9910D40005F4B6 /* CalculatorView.swift in Sources */,
 				CA9E41462B928A250057E5C2 /* HomeView.swift in Sources */,
 				CADF19CC2B9165360050C2DB /* ContentView.swift in Sources */,
 				CADF19CA2B9165360050C2DB /* FirstApp.swift in Sources */,
