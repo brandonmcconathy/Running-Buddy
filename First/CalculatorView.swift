@@ -66,7 +66,7 @@ struct CalculatorView: View {
                         Image(systemName: "plus")
                     }
                         .font(.system(size: 25))
-                        .disabled(time == 150 ? true : false)
+                        .disabled(time == 300 ? true : false)
                 }
                     .padding(.horizontal, 60)
                 Text("Finish Time:  \(Int(time))")
