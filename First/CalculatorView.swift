@@ -25,12 +25,19 @@ func getMileage(distance: Distance) -> Double {
     }
 }
 
+func getTime(hours:Double, minutes:Double, seconds:Double) -> Double {
+    return hours * 60 + minutes + seconds / 60
+}
+
 struct CalculatorView: View {
     
     @Binding var darkMode: Bool
     
     @State private var selectedDistance: Distance = .full
-    @State private var time = 150.0
+    @State private var hours = 0.0
+    @State private var minutes = 0.0
+    @State private var seconds = 0.0
+    @State private var time = 225.0
     
     var body: some View {
         ZStack {
@@ -46,30 +53,29 @@ struct CalculatorView: View {
                     Text("5k").tag(Distance.fivek)
                 }
                     .pickerStyle(.wheel)
+                    .padding(EdgeInsets(top:-20, leading:0, bottom:-20, trailing:0 ))
                 HStack {
-                    Button {
-                        time -= 1
-                    } label: {
-                        Image(systemName: "minus")
+                    Picker("Hours", selection: $hours) {
+                        ForEach(0...10, id:\.self) { number in
+                            Text("\(number)")
+                        }
                     }
-                        .font(.system(size: 25))
-                        .disabled(time == 0 ? true : false)
-                    Slider(
-                        value: $time,
-                        in: 0...300,
-                        step: 1
-                    )
-                        .padding(.horizontal, 5)
-                    Button {
-                        time += 1
-                    } label: {
-                        Image(systemName: "plus")
+                        .pickerStyle(.wheel)
+                    Picker("Minutes", selection: $minutes) {
+                        ForEach(0...59, id:\.self) { number in
+                            Text("\(number)")
+                        }
                     }
-                        .font(.system(size: 25))
-                        .disabled(time == 300 ? true : false)
+                        .pickerStyle(.wheel)
+                    Picker("Seconds", selection: $seconds) {
+                        ForEach(0...59, id:\.self) { number in
+                            Text("\(number)")
+                        }
+                    }
+                        .pickerStyle(.wheel)
                 }
                     .padding(.horizontal, 60)
-                Text("Finish Time:  \(Int(time))")
+                Text("Finish Time:  \(Int(hours)):\(minutes):\(seconds)")
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
                 Text(String(format: "Required pace: %d:%02d per mile", Int(time / getMileage(distance: selectedDistance)), Int((time / getMileage(distance: selectedDistance) - floor(time / getMileage(distance: selectedDistance))) * 60)))
