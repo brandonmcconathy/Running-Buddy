@@ -72,7 +72,7 @@ struct CalculatorView: View {
                 Text("Finish Time:  \(Int(time))")
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
-                Text(String(format: "Required pace: %d:%d per mile", Int(time / getMileage(distance: selectedDistance)), Int((time / getMileage(distance: selectedDistance) - floor(time / getMileage(distance: selectedDistance))) * 60)))
+                Text(String(format: "Required pace: %d:%02d per mile", Int(time / getMileage(distance: selectedDistance)), Int((time / getMileage(distance: selectedDistance) - floor(time / getMileage(distance: selectedDistance))) * 60)))
                 Spacer()
             }
         }
