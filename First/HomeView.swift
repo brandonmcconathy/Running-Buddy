@@ -76,6 +76,9 @@ struct HomeView: View {
             NavigationLink(destination: CalculatorView(darkMode: $darkMode)) {
                 Text("Pace Calculator")
             }
+            NavigationLink(destination: FinishTimeView(darkMode: $darkMode)) {
+                Text("Finish Time Calculator")
+            }
                 .font(.system(size: 23))
             Spacer()
         }
