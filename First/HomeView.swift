@@ -76,6 +76,8 @@ struct HomeView: View {
             NavigationLink(destination: CalculatorView(darkMode: $darkMode)) {
                 Text("Pace Calculator")
             }
+                .font(.system(size: 23))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
             NavigationLink(destination: FinishTimeView(darkMode: $darkMode)) {
                 Text("Finish Time Calculator")
             }
