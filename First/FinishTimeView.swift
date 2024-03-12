@@ -10,6 +10,9 @@ import SwiftUI
 struct FinishTimeView: View {
     
     @Binding var darkMode: Bool
+    @State private var selectedDistance: Distance = .full
+    @State private var paceMinutes = 0
+    @State private var paceSeconds = 0
     
     var body: some View {
         ZStack {
@@ -18,6 +21,15 @@ struct FinishTimeView: View {
             VStack {
                 Text("Finish Time Calculator")
                     .font(.system(size: 28))
+                Picker("Distance", selection: $selectedDistance) {
+                    Text("Marathon").tag(Distance.full)
+                    Text("Half Marathon").tag(Distance.half)
+                    Text("10k").tag(Distance.tenk)
+                    Text("5k").tag(Distance.fivek)
+                }
+                    .pickerStyle(.wheel)
+                    .padding(EdgeInsets(top:-20, leading:0, bottom:-20, trailing:0 ))
+                Spacer()
             }
         }
     }
