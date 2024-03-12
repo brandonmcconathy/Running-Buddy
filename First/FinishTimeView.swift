@@ -12,10 +12,13 @@ struct FinishTimeView: View {
     @Binding var darkMode: Bool
     
     var body: some View {
-        VStack() {
-            Text("Finish Time Calculator")
-                .font(.system(size: 25))
-            Spacer()
+        ZStack {
+            Color(darkMode ? .lightGray : .white)
+                .ignoresSafeArea()
+            VStack {
+                Text("Finish Time Calculator")
+                    .font(.system(size: 28))
+            }
         }
     }
 }
