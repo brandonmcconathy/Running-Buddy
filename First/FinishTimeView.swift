@@ -48,6 +48,8 @@ struct FinishTimeView: View {
                 Text(String(format: "%d:%02d/mi", paceMinutes, paceSeconds))
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
+                Text("Finish Time:")
+                Text("10:10:10")
                 Spacer()
             }
         }
