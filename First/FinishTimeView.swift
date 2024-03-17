@@ -49,7 +49,7 @@ struct FinishTimeView: View {
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
                 Text("Finish Time:")
-                Text(String(format: "%d:%02d:%02d"))
+                Text(String(format: "%d:%02d:%02d", hours, minutes, seconds))
                 Spacer()
             }
         }
