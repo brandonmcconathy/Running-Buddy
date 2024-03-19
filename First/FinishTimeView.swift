@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+func findTime(minutes: Int, seconds: Int, distance:Double) -> Double {
+    
+}
+
 struct FinishTimeView: View {
     
     @Binding var darkMode: Bool
