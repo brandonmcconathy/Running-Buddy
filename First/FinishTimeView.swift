@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-func totalTime(minutes: Int, seconds: Int) -> Double {
-    return Double(minutes) + (Double(seconds) / 60)
+func totalTime(minutes: Int, seconds: Int, distance: Distance) -> Double {
+    return (Double(minutes) * getMileage(distance: distance)) + ((Double(seconds) * getMileage(distance: distance)) / 60)
 }
 
 struct FinishTimeView: View {
