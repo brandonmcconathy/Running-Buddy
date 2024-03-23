@@ -11,6 +11,10 @@ func totalTime(minutes: Int, seconds: Int, distance: Distance) -> Double {
     return (Double(minutes) * getMileage(distance: distance)) + ((Double(seconds) * getMileage(distance: distance)) / 60)
 }
 
+func findHours(time: Double) -> Double {
+    return time / 60
+}
+
 struct FinishTimeView: View {
     
     @Binding var darkMode: Bool
