@@ -25,11 +25,11 @@ func getMileage(distance: Distance) -> Double {
     }
 }
 
-func getHours(time:Double, distance:Double) -> Int {
+func getMinutes(time:Double, distance:Double) -> Int {
     return Int(time / distance)
 }
 
-func getMinutes(time:Double, distance:Double) -> Int {
+func getSeconds(time:Double, distance:Double) -> Int {
     return Int((time / distance - floor(time / distance)) * 60)
 }
 
@@ -85,7 +85,7 @@ struct CalculatorView: View {
                 Text(String(format: "Finish Time: %d:%02d:%02d", hours, minutes, seconds))
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
-                Text(String(format: "Required pace: %d:%02d per mile", getHours(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance)), getMinutes(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance))))
+                Text(String(format: "Required pace: %d:%02d per mile", getMinutes(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance)), getSeconds(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance))))
                 Spacer()
             }
         }
