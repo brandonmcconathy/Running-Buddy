@@ -11,8 +11,12 @@ func totalTime(minutes: Int, seconds: Int, distance: Distance) -> Double {
     return (Double(minutes) * getMileage(distance: distance)) + ((Double(seconds) * getMileage(distance: distance)) / 60)
 }
 
-func findHours(time: Double) -> Double {
-    return time / 60
+func findHours(time: Double) -> Int {
+    return Int(time / 60)
+}
+
+func findMinutes(time: Double) -> Int {
+    return Int(time) - (findHours(time: time) * 60)
 }
 
 struct FinishTimeView: View {
@@ -58,7 +62,7 @@ struct FinishTimeView: View {
                     .padding(.vertical, 10)
                 Text("Finish Time:")
                 Text(String(format: "%0.2f", totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)))
-                //Text(String(format: "%d:%02d:%02d", hours, minutes, seconds))
+                Text(String(format: "%d:%02d:", findHours(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findMinutes(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance))))
                 Spacer()
             }
         }
