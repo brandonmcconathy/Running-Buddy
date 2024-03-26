@@ -19,6 +19,10 @@ func findMinutes(time: Double) -> Int {
     return Int(time) - (findHours(time: time) * 60)
 }
 
+func findSeconds(time: Double) -> Int {
+    return Int((time - Double(findHours(time: time) * 60) - Double(findMinutes(time: time))) * 60)
+}
+
 struct FinishTimeView: View {
     
     @Binding var darkMode: Bool
@@ -62,7 +66,7 @@ struct FinishTimeView: View {
                     .padding(.vertical, 10)
                 Text("Finish Time:")
                 Text(String(format: "%0.2f", totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)))
-                Text(String(format: "%d:%02d:", findHours(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findMinutes(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance))))
+                Text(String(format: "%d:%02d:%02d", findHours(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findMinutes(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findSeconds(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance))))
                 Spacer()
             }
         }
