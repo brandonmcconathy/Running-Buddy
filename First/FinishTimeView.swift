@@ -65,8 +65,10 @@ struct FinishTimeView: View {
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
                 Text("Finish Time:")
-                Text(String(format: "%0.2f", totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)))
+                    .font(.system(size: 24))
+                    .padding(.vertical, 15)
                 Text(String(format: "%d:%02d:%02d", findHours(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findMinutes(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findSeconds(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance))))
+                    .font(.system(size: 24))
                 Spacer()
             }
         }
