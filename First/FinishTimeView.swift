@@ -44,7 +44,10 @@ struct FinishTimeView: View {
                     Text("5k").tag(Distance.fivek)
                 }
                     .pickerStyle(.wheel)
-                    .padding(EdgeInsets(top:-20, leading:0, bottom:-20, trailing:0))
+                    .padding(EdgeInsets(top:-20, leading:0, bottom:-10, trailing:0))
+                Text(String(format: "%d:%02d/mi", paceMinutes, paceSeconds))
+                    .font(.system(size: 20))
+                    .padding(.vertical, 10)
                 HStack {
                     Picker("Minutes", selection: $paceMinutes) {
                         ForEach(0..<31) { number in
@@ -61,9 +64,7 @@ struct FinishTimeView: View {
                         .pickerStyle(.wheel)
                 }
                 .padding(EdgeInsets(top:0, leading:80, bottom:0, trailing:80))
-                Text(String(format: "%d:%02d/mi", paceMinutes, paceSeconds))
-                    .font(.system(size: 20))
-                    .padding(.vertical, 10)
+
                 Text("Finish Time:")
                     .font(.system(size: 24))
                     .padding(.vertical, 15)
