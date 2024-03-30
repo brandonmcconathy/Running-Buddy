@@ -17,7 +17,7 @@ struct ContentView: View {
         
         NavigationView {
             ZStack {
-                Color(darkMode ? .lightGray : .white)
+                Color(darkMode ? .black : .white)
                     .ignoresSafeArea()
                 if settings {
                     SettingsView(darkMode: $darkMode)
@@ -25,6 +25,7 @@ struct ContentView: View {
                     HomeView(darkMode: $darkMode)
                 }
             }
+            .foregroundStyle(darkMode ? .white : .black)
             .statusBar(hidden: true)
             .toolbar {
                 ToolbarItem() {
