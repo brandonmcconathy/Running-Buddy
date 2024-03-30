@@ -68,12 +68,14 @@ struct CalculatorView: View {
                         }
                     }
                         .pickerStyle(.wheel)
+                    Text(":")
                     Picker("Minutes", selection: $minutes) {
                         ForEach(0..<60) { number in
                             Text("\(number)").tag(number)
                         }
                     }
                         .pickerStyle(.wheel)
+                    Text(":")
                     Picker("Seconds", selection: $seconds) {
                         ForEach(0..<60) { number in
                             Text("\(number)").tag(number)
