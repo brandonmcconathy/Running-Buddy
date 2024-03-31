@@ -29,6 +29,7 @@ struct HomeView: View {
                 }
                     .font(.system(size: 25))
                     .disabled(distance == 0 ? true : false)
+                    .foregroundColor(.blue)
                 Slider(
                     value: $distance,
                     in: 0...150,
@@ -42,6 +43,7 @@ struct HomeView: View {
                 }
                     .font(.system(size: 25))
                     .disabled(distance == 150 ? true : false)
+                    .foregroundColor(.blue)
             }
                 .padding(.horizontal, 60)
             Text("Miles per week:  \(Int(distance))")
@@ -78,10 +80,12 @@ struct HomeView: View {
             }
                 .font(.system(size: 23))
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
+                .foregroundColor(.blue)
             NavigationLink(destination: FinishTimeView(darkMode: $darkMode)) {
                 Text("Finish Time Calculator")
             }
                 .font(.system(size: 23))
+                .foregroundColor(.blue)
             Spacer()
         }
     }
