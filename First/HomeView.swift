@@ -70,17 +70,28 @@ struct HomeView: View {
                     .disabled(daysPerWeek == 7 ? true : false)
                     .foregroundColor(daysPerWeek == 7 ? .gray : .blue)
             }
-                
-                
-            Stepper(
-                value: $longRunPercent,
-                in: 0.2...0.30,
-                step: 0.05
-            ) {
+            HStack {
                 Text("Long Run:  \(Int(longRunPercent * 100))%")
-            }
                 .padding(EdgeInsets(top: 10, leading: 50, bottom: 40, trailing: 50))
                 .font(.system(size: 20))
+                Button {
+                    longRunPercent -= 0.05
+                } label: {
+                    Image(systemName: "minus")
+                }
+                    .font(.system(size: 25))
+                    .disabled(longRunPercent == 0.2 ? true : false)
+                    .foregroundColor(longRunPercent == 0.2 ? .gray : .blue)
+                Button {
+                    longRunPercent += 0.05
+                } label: {
+                    Image(systemName: "plus")
+                }
+                    .font(.system(size: 25))
+                    .disabled(longRunPercent == 0.3 ? true : false)
+                    .foregroundColor(longRunPercent == 0.3 ? .gray : .blue)
+            }
+                
             Text(String(format: "Miles per day: %.2f", distance * (1 - longRunPercent) / (daysPerWeek - 1)))
                 .font(.system(size: 20))
             Text(String(format: "Long Run: %.2f", distance * longRunPercent))
