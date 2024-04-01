@@ -49,15 +49,29 @@ struct HomeView: View {
             Text("Miles per week:  \(Int(distance))")
                 .font(.system(size: 20))
                 .padding(.vertical, 10)
-            Stepper(
-                value: $daysPerWeek,
-                in: 5...7,
-                step: 1
-            ) {
+            HStack {
                 Text("Days per week:  \(Int(daysPerWeek))")
-            }
                 .padding(EdgeInsets(top: 10, leading: 50, bottom: 10, trailing: 50))
                 .font(.system(size: 20))
+                Button {
+                    daysPerWeek -= 1
+                } label: {
+                    Image(systemName: "minus")
+                }
+                    .font(.system(size: 25))
+                    .disabled(daysPerWeek == 4 ? true : false)
+                    .foregroundColor(daysPerWeek == 4 ? .gray : .blue)
+                Button {
+                    daysPerWeek += 1
+                } label: {
+                    Image(systemName: "plus")
+                }
+                    .font(.system(size: 25))
+                    .disabled(daysPerWeek == 7 ? true : false)
+                    .foregroundColor(daysPerWeek == 7 ? .gray : .blue)
+            }
+                
+                
             Stepper(
                 value: $longRunPercent,
                 in: 0.2...0.30,
