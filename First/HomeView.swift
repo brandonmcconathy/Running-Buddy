@@ -29,7 +29,7 @@ struct HomeView: View {
                 }
                     .font(.system(size: 25))
                     .disabled(distance == 0 ? true : false)
-                    .foregroundColor(.blue)
+                    .foregroundColor(distance == 0 ? .gray : .blue)
                 Slider(
                     value: $distance,
                     in: 0...150,
@@ -43,7 +43,7 @@ struct HomeView: View {
                 }
                     .font(.system(size: 25))
                     .disabled(distance == 150 ? true : false)
-                    .foregroundColor(.blue)
+                    .foregroundColor(distance == 150 ? .gray : .blue)
             }
                 .padding(.horizontal, 60)
             Text("Miles per week:  \(Int(distance))")
