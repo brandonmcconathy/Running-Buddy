@@ -48,7 +48,7 @@ struct CalculatorView: View {
     
     var body: some View {
         ZStack {
-            Color(darkMode ? .lightGray : .white)
+            Color(darkMode ? .black : .white)
                 .ignoresSafeArea()
             VStack {
                 Text("Pace Calculator")
@@ -92,6 +92,7 @@ struct CalculatorView: View {
             }
         }
         .statusBar(hidden: true)
+        .foregroundStyle(darkMode ? .white : .black)
     }
 }
 
