@@ -32,7 +32,7 @@ struct FinishTimeView: View {
     
     var body: some View {
         ZStack {
-            Color(darkMode ? .lightGray : .white)
+            Color(darkMode ? .gray : .white)
                 .ignoresSafeArea()
             VStack {
                 Text("Finish Time Calculator")
