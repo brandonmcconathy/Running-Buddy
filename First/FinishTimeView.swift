@@ -45,7 +45,7 @@ struct FinishTimeView: View {
                 }
                     .pickerStyle(.wheel)
                     .padding(EdgeInsets(top:-20, leading:0, bottom:-10, trailing:0))
-                Text(String(format: "%d:%02d/mi", paceMinutes, paceSeconds))
+                Text(String(format: "Pace: %d:%02d/mi", paceMinutes, paceSeconds))
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
                 HStack {
