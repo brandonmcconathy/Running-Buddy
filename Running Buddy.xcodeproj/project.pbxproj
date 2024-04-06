@@ -22,7 +22,7 @@
 		CA3F72532B9910D40005F4B6 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		CA9E41452B928A250057E5C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CA9E41472B96D2C00057E5C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CADF19C62B9165360050C2DB /* First.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADF19C62B9165360050C2DB /* Running Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Running Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF19C92B9165360050C2DB /* FirstApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstApp.swift; sourceTree = "<group>"; };
 		CADF19CB2B9165360050C2DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CADF19CD2B9165380050C2DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		CADF19C72B9165360050C2DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CADF19C62B9165360050C2DB /* First.app */,
+				CADF19C62B9165360050C2DB /* Running Buddy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,9 +84,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CADF19C52B9165360050C2DB /* First */ = {
+		CADF19C52B9165360050C2DB /* Running Buddy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CADF19D42B9165380050C2DB /* Build configuration list for PBXNativeTarget "First" */;
+			buildConfigurationList = CADF19D42B9165380050C2DB /* Build configuration list for PBXNativeTarget "Running Buddy" */;
 			buildPhases = (
 				CADF19C22B9165360050C2DB /* Sources */,
 				CADF19C32B9165360050C2DB /* Frameworks */,
@@ -96,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = First;
+			name = "Running Buddy";
 			productName = First;
-			productReference = CADF19C62B9165360050C2DB /* First.app */;
+			productReference = CADF19C62B9165360050C2DB /* Running Buddy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CADF19C12B9165360050C2DB /* Build configuration list for PBXProject "First" */;
+			buildConfigurationList = CADF19C12B9165360050C2DB /* Build configuration list for PBXProject "Running Buddy" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CADF19C52B9165360050C2DB /* First */,
+				CADF19C52B9165360050C2DB /* Running Buddy */,
 			);
 		};
 /* End PBXProject section */
@@ -353,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CADF19C12B9165360050C2DB /* Build configuration list for PBXProject "First" */ = {
+		CADF19C12B9165360050C2DB /* Build configuration list for PBXProject "Running Buddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CADF19D22B9165380050C2DB /* Debug */,
@@ -362,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CADF19D42B9165380050C2DB /* Build configuration list for PBXNativeTarget "First" */ = {
+		CADF19D42B9165380050C2DB /* Build configuration list for PBXNativeTarget "Running Buddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CADF19D52B9165380050C2DB /* Debug */,
