@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     
     @Binding var darkMode: Bool
+    @Binding var metric: Bool
     
     var body: some View {
         VStack() {
@@ -18,7 +19,9 @@ struct SettingsView: View {
             VStack {
                 Toggle("Dark Mode", isOn: $darkMode)
                     .padding(.horizontal, 100)
-
+                    .padding(.vertical, 20)
+                Toggle("Metric", isOn: $metric)
+                    .padding(.horizontal, 100)
             }
             Spacer()
         }

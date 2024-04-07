@@ -12,6 +12,7 @@ struct ContentView: View {
     
     @State private var settings: Bool = false
     @State private var darkMode: Bool = true
+    @State private var metric: Bool = false
     
     var body: some View {
         
@@ -20,7 +21,7 @@ struct ContentView: View {
                 Color(darkMode ? .black : .white)
                     .ignoresSafeArea()
                 if settings {
-                    SettingsView(darkMode: $darkMode)
+                    SettingsView(darkMode: $darkMode, metric: $metric)
                 } else {
                     HomeView(darkMode: $darkMode)
                 }
