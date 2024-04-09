@@ -33,7 +33,7 @@ struct HomeView: View {
                     .foregroundColor(distance == 0 ? .gray : .blue)
                 Slider(
                     value: $distance,
-                    in: metric ? 0...300 : 0...150,
+                    in: metric ? 0...250 : 0...150,
                     step: 1
                 )
                     .padding(.horizontal, 5)
@@ -93,12 +93,12 @@ struct HomeView: View {
                     .foregroundColor(longRunPercent == 0.3 ? .gray : .blue)
             }
                 
-            Text(String(format: "Miles per day: %.2f", distance * (1 - longRunPercent) / (daysPerWeek - 1)))
+            Text(String(format: metric ? "Kilometers per day: %.2f" : "Miles per day: %.2f", distance * (1 - longRunPercent) / (daysPerWeek - 1)))
                 .font(.system(size: 20))
             Text(String(format: "Long Run: %.2f", distance * longRunPercent))
                 .padding(.vertical, 20)
                 .font(.system(size: 20))
-            Text("Next week mileage: \(Int(round(distance * 1.1)))")
+            Text("Next week distance: \(Int(round(distance * 1.1)))")
                 .font(.system(size: 20))
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
             NavigationLink(destination: CalculatorView(darkMode: $darkMode)) {
