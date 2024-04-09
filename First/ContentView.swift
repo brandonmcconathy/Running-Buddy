@@ -23,7 +23,7 @@ struct ContentView: View {
                 if settings {
                     SettingsView(darkMode: $darkMode, metric: $metric)
                 } else {
-                    HomeView(darkMode: $darkMode)
+                    HomeView(darkMode: $darkMode, metric: $metric)
                 }
             }
             .foregroundStyle(darkMode ? .white : .black)

@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @Binding var darkMode: Bool
+    @Binding var metric: Bool
     
     @State private var distance = 75.0
     @State private var daysPerWeek = 6.0
@@ -32,7 +33,7 @@ struct HomeView: View {
                     .foregroundColor(distance == 0 ? .gray : .blue)
                 Slider(
                     value: $distance,
-                    in: 0...150,
+                    in: metric ? 0...300 : 0...150,
                     step: 1
                 )
                     .padding(.horizontal, 5)
@@ -46,7 +47,7 @@ struct HomeView: View {
                     .foregroundColor(distance == 150 ? .gray : .blue)
             }
                 .padding(.horizontal, 60)
-            Text("Miles per week:  \(Int(distance))")
+            Text(metric ? "Kilometers per week:  \(Int(distance))" : "Miles per week:  \(Int(distance))")
                 .font(.system(size: 20))
                 .padding(.vertical, 10)
             HStack {
