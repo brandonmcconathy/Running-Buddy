@@ -88,7 +88,7 @@ struct CalculatorView: View {
                 Text(String(format: "Finish Time: %d:%02d:%02d", hours, minutes, seconds))
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
-                Text(String(format: "Required pace: %d:%02d per mile", getMinutes(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance)), getSeconds(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance))))
+                Text(String(format: metric ? "Required pace: %d:%02d per kilometer" : "Required pace: %d:%02d per mile", getMinutes(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance) * (metric ? 1.609 : 1.0)), getSeconds(time: getTime(hours: hours, minutes: minutes, seconds: seconds), distance: getMileage(distance: selectedDistance) * (metric ? 1.609 : 1.0))))
                 Spacer()
             }
         }
