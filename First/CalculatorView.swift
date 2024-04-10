@@ -40,6 +40,7 @@ func getTime(hours:Int, minutes:Int, seconds:Int) -> Double {
 struct CalculatorView: View {
     
     @Binding var darkMode: Bool
+    @Binding var metric: Bool
     
     @State private var selectedDistance: Distance = .full
     @State private var hours = 0

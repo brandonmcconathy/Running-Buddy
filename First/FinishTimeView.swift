@@ -26,6 +26,8 @@ func findSeconds(time: Double) -> Int {
 struct FinishTimeView: View {
     
     @Binding var darkMode: Bool
+    @Binding var metric: Bool
+    
     @State private var selectedDistance: Distance = .full
     @State private var paceMinutes = 0
     @State private var paceSeconds = 0

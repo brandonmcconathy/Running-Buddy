@@ -101,13 +101,13 @@ struct HomeView: View {
             Text("Next week distance: \(Int(round(distance * 1.1)))")
                 .font(.system(size: 20))
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
-            NavigationLink(destination: CalculatorView(darkMode: $darkMode)) {
+            NavigationLink(destination: CalculatorView(darkMode: $darkMode, metric: $metric)) {
                 Text("Pace Calculator")
             }
                 .font(.system(size: 23))
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
                 .foregroundColor(.blue)
-            NavigationLink(destination: FinishTimeView(darkMode: $darkMode)) {
+            NavigationLink(destination: FinishTimeView(darkMode: $darkMode, metric: $metric)) {
                 Text("Finish Time Calculator")
             }
                 .font(.system(size: 23))
