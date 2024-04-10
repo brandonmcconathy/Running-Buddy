@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-func totalTime(minutes: Int, seconds: Int, distance: Distance) -> Double {
-    return (Double(minutes) * getMileage(distance: distance)) + ((Double(seconds) * getMileage(distance: distance)) / 60)
+func totalTime(minutes: Int, seconds: Int, distance: Distance, metric: Bool) -> Double {
+    return (Double(minutes) * getMileage(distance: distance) * (metric ? 1.609 : 1.0)) + ((Double(seconds) * getMileage(distance: distance) * (metric ? 1.609 : 1.0)) / 60)
 }
 
 func findHours(time: Double) -> Int {
@@ -47,7 +47,7 @@ struct FinishTimeView: View {
                 }
                     .pickerStyle(.wheel)
                     .padding(EdgeInsets(top:-20, leading:0, bottom:-10, trailing:0))
-                Text(String(format: "Pace: %d:%02d/mi", paceMinutes, paceSeconds))
+                Text(String(format: metric ? "Pace: %d:%02d/km" : "Pace: %d:%02d/mi", paceMinutes, paceSeconds))
                     .font(.system(size: 20))
                     .padding(.vertical, 10)
                 HStack {
@@ -70,7 +70,7 @@ struct FinishTimeView: View {
                 Text("Finish Time:")
                     .font(.system(size: 24))
                     .padding(.vertical, 15)
-                Text(String(format: "%d:%02d:%02d", findHours(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findMinutes(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance)), findSeconds(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance))))
+                Text(String(format: "%d:%02d:%02d", findHours(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance, metric: metric)), findMinutes(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance, metric: metric)), findSeconds(time: totalTime(minutes: paceMinutes, seconds: paceSeconds, distance: selectedDistance, metric: metric))))
                     .font(.system(size: 24))
                 Spacer()
             }
