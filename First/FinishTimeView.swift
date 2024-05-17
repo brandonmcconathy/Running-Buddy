@@ -75,6 +75,7 @@ struct FinishTimeView: View {
                 Spacer()
             }
         }
+        .statusBar(hidden: true)
     }
 }
 
